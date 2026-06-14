@@ -19,7 +19,9 @@ htmlcov/
 venv/
 env/
 
-models/
+models/.locks/
+models/models--*/
+models/CACHEDIR.TAG
 chroma_db/
 vector_store/
 storage/
