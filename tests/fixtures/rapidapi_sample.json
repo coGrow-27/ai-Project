@@ -1,0 +1,43 @@
+{
+  "data": {
+    "channels": [
+      {
+        "id": "UC_irTAfqGWPsbUingTntPFA",
+        "name": "Anand Jillu",
+        "username": "@anandjillu4667",
+        "type": "youtube",
+        "url": "https://www.youtube.com/channel/UC_irTAfqGWPsbUingTntPFA",
+        "followers": 1810000,
+        "totalViews": 1202550333,
+        "totalPosts": 960,
+        "description": "growingworld02@gmail.com\n",
+        "createdDate": "2021-12-27T02:23:01.563082Z",
+        "categoryName": "People & Blogs",
+        "sampleVideo": "https://www.youtube.com/watch?v=_e5jONBx0T4",
+        "country": null,
+        "profileImg": "https://yt3.ggpht.com/example=s88"
+      },
+      {
+        "id": "UC_-ywsA9-7dSTbWmdQdltbQ",
+        "name": "The Musings of a Crouton",
+        "username": "@themusingsofacrouton1098",
+        "type": "youtube",
+        "url": "https://www.youtube.com/channel/UC_-ywsA9-7dSTbWmdQdltbQ",
+        "followers": 186000,
+        "totalViews": 9670373,
+        "totalPosts": 592,
+        "description": "Hello! It is I, Musings.",
+        "createdDate": "2018-06-30T18:22:30Z",
+        "categoryName": "People & Blogs",
+        "sampleVideo": "https://www.youtube.com/watch?v=ZkbS21VLHD4",
+        "country": "US",
+        "profileImg": "https://yt3.ggpht.com/example2=s88"
+      }
+    ],
+    "find": {
+      "url": null,
+      "keywords": "beauty|makeup",
+      "source": {"videoId": null, "channelId": null}
+    }
+  }
+}

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>智选红人 · Campaign 匹配平台</title>
+    <link rel="stylesheet" href="/frontend/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="brand-mark">智选</span>
+          <div>
+            <strong>智选红人 IR</strong>
+            <span>AI 驱动的海外红人 Campaign 匹配平台</span>
+          </div>
+        </div>
+        <span id="healthBadge" class="badge">检查中</span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <nav id="stepNav" class="step-nav" aria-label="匹配流程">
+        <div class="step-item active" data-step="config"><span>1</span>Campaign 配置</div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="search"><span>2</span>达人检索</div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="rag"><span>3</span>AI 语义匹配</div>
+        <div class="step-line"></div>
+        <div class="step-item" data-step="result"><span>4</span>结果生成</div>
+      </nav>
+
+      <div id="progressPanel" class="progress-panel hidden">
+        <div class="progress-head">
+          <strong id="progressLabel">准备中</strong>
+          <span id="progressPct">0%</span>
+        </div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+
+      <section class="workspace">
+        <aside class="panel input-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Campaign 配置</p>
+              <h1>营销需求</h1>
+              <p class="panel-desc">填写产品与目标市场，系统将检索、评分并生成合作方案。</p>
+            </div>
+          </div>
+
+          <form id="campaignForm" class="form campaign-form">
+            <fieldset class="form-section">
+              <legend>产品信息</legend>
+              <label for="productName">产品名称</label>
+              <input id="productName" name="product_name" type="text" required value="温和猫咪去毛梳" />
+
+              <label for="productCategory">产品类别</label>
+              <input id="productCategory" name="product_category" type="text" required value="宠物护理" />
+
+              <label for="productDescription">产品描述</label>
+              <textarea id="productDescription" name="product_description" rows="4" required>一款适合猫咪和小型犬的温和去毛梳，支持一键清理浮毛，人体工学握柄，梳针温和不伤皮肤，日常护理更轻松。</textarea>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>目标市场</legend>
+              <div class="field-row">
+                <div>
+                  <label for="targetCountry">目标国家/地区</label>
+                  <select id="targetCountry" name="target_country" required>
+                    <option value="US" selected>美国</option>
+                    <option value="UK">英国</option>
+                    <option value="CA">加拿大</option>
+                    <option value="AU">澳大利亚</option>
+                    <option value="DE">德国</option>
+                    <option value="FR">法国</option>
+                    <option value="JP">日本</option>
+                    <option value="IN">印度</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="targetLanguage">目标语言</label>
+                  <select id="targetLanguage" name="target_language" required>
+                    <option value="English" selected>英语</option>
+                    <option value="German">德语</option>
+                    <option value="French">法语</option>
+                    <option value="Japanese">日语</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>投放平台</legend>
+              <p id="platformHint" class="field-note">真实 API 模式请勾选 YouTube（RapidAPI 当前仅支持 YouTube 检索）</p>
+              <div class="checkbox-row">
+                <label><input type="checkbox" name="platforms" value="TikTok" /> 抖音国际版</label>
+                <label><input type="checkbox" name="platforms" value="Instagram" /> Instagram</label>
+                <label><input type="checkbox" name="platforms" value="YouTube" checked /> YouTube</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>红人筛选</legend>
+              <div class="field-row">
+                <div>
+                  <label for="minFollowers">最低粉丝量</label>
+                  <input id="minFollowers" name="min_followers" type="number" min="0" required value="10000" />
+                </div>
+                <div>
+                  <label for="maxFollowers">最高粉丝量</label>
+                  <input id="maxFollowers" name="max_followers" type="number" min="1" required value="80000" />
+                </div>
+              </div>
+              <div class="field-row">
+                <div>
+                  <label for="minEngagement">最低互动率</label>
+                  <input id="minEngagement" name="min_engagement_rate" type="number" min="0" max="1" step="0.001" required value="0.03" />
+                  <p class="field-note">真实 API 模式下不参与筛选</p>
+                </div>
+                <div>
+                  <label for="influencerCategory">红人内容类别</label>
+                  <input id="influencerCategory" name="influencer_category" type="text" required value="宠物护理" />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section highlight-section">
+              <legend>详细营销要求（可选）</legend>
+              <label for="marketingRequirements">AI 语义匹配描述</label>
+              <textarea
+                id="marketingRequirements"
+                name="detailed_marketing_requirements"
+                rows="5"
+                placeholder="例如：适合深夜陪伴、说话风格温柔、推荐过小众护肤产品、粉丝以18-30岁女性为主"
+              ></textarea>
+              <p class="field-note">支持中文自然语言输入，专用于 RAG 语义匹配；不参与传统筛选。留空时使用产品描述作为语义参考。</p>
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>预算</legend>
+              <label for="campaignBudget">Campaign 预算（美元）</label>
+              <input id="campaignBudget" name="campaign_budget" type="number" min="0" step="100" required value="5000" />
+            </fieldset>
+
+            <fieldset class="form-section">
+              <legend>运行选项</legend>
+              <label class="checkbox-inline">
+                <input id="asyncMode" type="checkbox" disabled />
+                使用异步任务（需本地 Redis + Celery Worker）
+              </label>
+              <p id="asyncHint" class="field-note">检测 Redis 中… 日常使用请直接点击「开始匹配」（同步模式，无需 Redis）。</p>
+              <p id="runtimeHint" class="hint">正在读取运行模式...</p>
+            </fieldset>
+
+            <div class="actions">
+              <button id="matchButton" type="submit">开始匹配</button>
+              <button id="clearButton" type="button" class="secondary">清空结果</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="panel result-panel">
+          <div class="panel-head compact">
+            <div>
+              <p class="eyebrow">匹配结果</p>
+              <h2>红人推荐</h2>
+            </div>
+            <span id="statusText" class="status">等待提交</span>
+          </div>
+          <div id="fallbackBanner" class="fallback-banner hidden"></div>
+          <div id="summaryBox" class="summary hidden"></div>
+          <div id="resultBox" class="results">
+            <div class="empty-state">
+              <p>填写左侧 Campaign 配置，点击「开始匹配」查看 Top 10 红人推荐。</p>
+              <p class="muted">Top 5 将生成推荐理由与中英双语邀约信。</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/frontend/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+[
+  {
+    "influencer_id": "inf_001",
+    "username": "cat_mom_jessie",
+    "follower_count": 25000,
+    "region": "US",
+    "bio": "Sharing the chaotic life of raising 3 rescue cats. Relatible, humorous product reviewer.",
+    "engagement_rate": 0.058,
+    "style_tags": ["humorous", "honest review", "cats"],
+    "recent_videos": [
+      {
+        "video_id": "vid_101",
+        "video_title": "Trying the worst-rated cat brush on Amazon",
+        "script_text": "Guys, today we are testing this viral cat hair remover from Amazon. Honestly, it screams cheap plastic. Look at this! My cat Luna literally ran away when she felt the stiff metal bristles. The handle grip is terrible, it feels like it's going to snap. Save your 15 dollars, this is trash.",
+        "comments": [
+          "OMG thank you! I almost bought this on TikTok Shop yesterday!",
+          "My cat hates it too, the metal teeth are way too sharp and scratched her skin.",
+          "Can someone please recommend a brush for long-hair Persian cats that actually softens the fur?",
+          "The handle looks so uncomfortable to hold, my wrist would hurt."
+        ]
+      }
+    ]
+  },
+  {
+    "influencer_id": "inf_002",
+    "username": "grooming_pro_dan",
+    "follower_count": 48000,
+    "region": "US",
+    "bio": "Certified pet groomer sharing daily tips, hacks, and product deep-dives.",
+    "engagement_rate": 0.042,
+    "style_tags": ["professional", "educational", "pet care"],
+    "recent_videos": [
+      {
+        "video_id": "vid_102",
+        "video_title": "How to de-shed a golden retriever without hurting them",
+        "script_text": "When de-shedding double or thick coats, you absolutely need an ergonomic tool. Most products on the market don't penetrate the dense undercoat, they just scratch the surface and cause wrist fatigue. Watch how this specific undercoat rake grabs the dead hair smoothly without any pulling.",
+        "comments": [
+          "This is so satisfying to watch. My husky sheds non-stop.",
+          "I have a husky mix, the hair flying everywhere drives me crazy, need a heavy-duty brush.",
+          "Does this work on short-hair cats that shed like crazy?",
+          "Professional advice is what I always look for before buying."
+        ]
+      }
+    ]
+  },
+  {
+    "influencer_id": "inf_003",
+    "username": "corgi_cuddle_crew",
+    "follower_count": 12000,
+    "region": "UK",
+    "bio": "Exploring the world with 2 sassy corgis. Aesthetic pet styling.",
+    "engagement_rate": 0.071,
+    "style_tags": ["aesthetic", "vlog", "corgi"],
+    "recent_videos": [
+      {
+        "video_id": "vid_103",
+        "video_title": "My daily dog grooming routine",
+        "script_text": "A quick run-through of our morning grooming. Finding a brush that doesn't look ugly on my vanity but actually works is a challenge. Using this cute pastel brush, but honestly, it takes forever to clean the hair out of the bristles afterward.",
+        "comments": [
+          "Where did you get that pastel brush? It looks so cute!",
+          "Cleaning hair out of dog brushes is literally my villain origin story. It takes forever.",
+          "My corgi hates grooming time, I need something super gentle.",
+          "Such a cute aesthetic video!"
+        ]
+      }
+    ]
+  }
+]
